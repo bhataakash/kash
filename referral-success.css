@@ -1,0 +1,87 @@
+.referral-success-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1300;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: popup-slide-up 0.5s ease forwards;
+  min-width: 300px;
+}
+
+.referral-success-popup i {
+  font-size: 3.5rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  animation: coin-spin 1s ease-out;
+}
+
+.referral-success-popup h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #ffd700, #ff9800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.referral-success-popup p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.bonus-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin: 1rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes popup-slide-up {
+  from {
+    transform: translate(-50%, 20%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes coin-spin {
+  from {
+    transform: rotateY(0deg) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(720deg) scale(1);
+    opacity: 1;
+  }
+}
+
+.popup-confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: confetti-fall 1s ease-out forwards;
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+

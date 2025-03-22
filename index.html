@@ -1,0 +1,357 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUZZFlix -earn money  </title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+        "/config.js": "/config.js"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="login-animations.css">
+    <link rel="stylesheet" href="legal-modals.css">
+    <link rel="stylesheet" href="loading-animation.css">
+    <link rel="stylesheet" href="notifications.css">
+    <link rel="stylesheet" href="wallet.css">
+    <link rel="stylesheet" href="referral-styles.css">
+    <link rel="stylesheet" href="course-styles.css">
+    <link rel="stylesheet" href="nav-styles.css">
+    <link rel="stylesheet" href="tasks-styles.css">
+    <link rel="stylesheet" href="profile-styles.css">
+    <link rel="stylesheet" href="plans-styles.css">
+    <link rel="stylesheet" href="ebooks-styles.css">
+</head>
+<body>
+<div class="loading-screen">
+  <img src="Abstract_Growth_Property_Investment_Free_Logo__1_-removebg-preview.png" alt="BUZZFlix Logo" class="loading-logo">
+  <h1 class="loading-title"><span class="buzz">BUZZ</span><span class="flix">Flix</span></h1>
+  <div class="loading-spinner">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+    <div id="app">
+        <header>
+            <div class="logo">
+                <img src="Abstract_Growth_Property_Investment_Free_Logo__1_-removebg-preview.png" alt="BUZZFlix Logo">
+                <h1><span class="buzz">BUZZ</span><span class="flix">Flix</span></h1>
+            </div>
+            
+            <div class="nav-toggle" :class="{ active: isNavActive }" @click="toggleNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav :class="{ active: isNavActive }">
+                <ul class="nav-links">
+                    <li><a href="#" @click="navigateTo('home')"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" @click="navigateTo('courses')"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                    <li><a href="#" @click="navigateTo('ebooks')"><i class="fas fa-book"></i> eBooks</a></li>
+                    <li><a href="#" @click="showTasks"><i class="fas fa-tasks"></i> Tasks</a></li>
+                    <li><a href="#" @click="showWallet"><i class="fas fa-wallet"></i> Wallet</a></li>
+                    <li><a href="#" @click="showReferEarn"><i class="fas fa-gift"></i> Refer</a></li>
+                    <li><a href="#" @click="showProfile"><i class="fas fa-user"></i> Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div v-if="showHomeContent">
+            <section class="hero">
+                <div class="hero-content">
+                    <img src="WhatsApp Image 2025-03-15 at 11.36.27_b52a0c47.jpg" alt="Education Courses Banner" class="banner-image">
+                    <h2>ENHANCE YOUR SKILLS AND REACH NEW HEIGHTS WITH BUZZFLIX</h2>
+                    <p>Time to unlock your real potential. Reveal your true abilities.</p>
+                    <button class="cta-button" @click="showCourses">Explore Courses</button>
+                </div>
+            </section>
+
+            <section class="explore-world">
+                <div class="explore-content">
+                    <div class="explore-description">
+                        <p>BUZZFlix is your premier destination for discovering the best product deals across the web. Our team of dedicated experts scours the internet to bring you exclusive discounts, promotions, and recommendations.</p>
+                    </div>
+                    <div class="explore-header">
+                        <i class="fas fa-globe-americas"></i>
+                        <h2>Explore the World</h2>
+                    </div>
+                    <div class="explore-grid">
+                        <div class="explore-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Learn Anywhere</h3>
+                            <p>Access premium courses from anywhere in the world</p>
+                        </div>
+                        <div class="explore-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Global Community</h3>
+                            <p>Join thousands of learners worldwide</p>
+                        </div>
+                        <div class="explore-card">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Get Certified</h3>
+                            <p>Earn recognized certifications in your field</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="featured" class="featured-section" v-if="currentSection === 'featured'">
+                <div class="products-grid">
+                </div>
+            </section>
+
+            <section id="tech" class="category-section" v-if="currentSection === 'tech'">
+                <div class="products-grid">
+                </div>
+            </section>
+
+            <section id="lifestyle" class="category-section" v-if="currentSection === 'lifestyle'">
+                <div class="products-grid">
+                </div>
+            </section>
+
+            <section id="entertainment" class="category-section" v-if="currentSection === 'entertainment'">
+                <div class="products-grid">
+                </div>
+            </section>
+
+            <section id="about" class="about-section" v-if="currentSection === 'about'">
+                <h2>About BUZZFlix</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>BUZZFlix is your premier destination for discovering the best product deals across the web. Our team of dedicated experts scours the internet to bring you exclusive discounts, promotions, and recommendations.</p>
+                        <p>We partner with leading brands and retailers to ensure you get access to high-quality courses and learning resources at unbeatable prices. With our carefully curated selections, you can start your learning journey with confidence knowing that each course has been vetted for quality and value.</p>
+                        <p>Our platform is designed to help you achieve your educational goals through comprehensive courses, expert instructors, and a supportive learning community. Whether you're looking to advance your career, learn new skills, or explore your passions, BUZZFlix is here to guide you every step of the way.</p>
+                        <p>Experience the power of transformative education with our diverse range of courses spanning technology, business, creative arts, and personal development. Join thousands of successful learners who have already taken the first step towards their dreams with BUZZFlix.</p>
+                        <h3>Why Choose Us</h3>
+                        <ul>
+                            <li>Expert-led courses</li>
+                            <li>Flexible learning options</li>
+                            <li>Industry-recognized certifications</li>
+                            <li>Lifetime access to course materials</li>
+                            <li>24/7 learning support</li>
+                            <li>Regular content updates</li>
+                        </ul>
+                    </div>
+                    <div class="testimonials">
+                        <h3>Success Stories</h3>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"BUZZFlix transformed my career path completely. The courses were comprehensive and the instructors were incredibly knowledgeable. I landed my dream job within months of completing my certification!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <i class="fas fa-user-circle"></i>
+                                <div>
+                                    <h4>Sarah Johnson</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The quality of education and support I received through BUZZFlix was exceptional. The platform made learning complex topics accessible and enjoyable. Highly recommended!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <i class="fas fa-user-circle"></i>
+                                <div>
+                                    <h4>Michael T.</h4>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="newsletter">
+                <div class="newsletter-content">
+                    <h2>Never Miss a Deal!</h2>
+                    <p>Subscribe to our newsletter and get the hottest deals delivered to your inbox.</p>
+                    <div class="newsletter-form">
+                        <input type="email" v-model="emailSubscription" placeholder="Your email address">
+                        <button @click="subscribeNewsletter">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>BUZZFlix</h3>
+                        <p>Your trusted source for the best deals and recommendations online.</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#" @click.prevent="showLegalModal('privacy')">Privacy Policy</a></li>
+                            <li><a href="#" @click.prevent="showLegalModal('terms')">Terms of Service</a></li>
+                            <li><a href="#" @click.prevent="showLegalModal('affiliate')">Affiliate Disclosure</a></li>
+                            <li><a href="#" @click.prevent="showLegalModal('contact')">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p> 2023 BUZZFlix. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+
+        <section id="course-page" class="course-page" v-if="showCoursePage">
+            <div class="course-card">
+                <img src="Purple And White Modern Digital Marketing Agency Instagram Post.png" alt="Digital Marketing Course" class="course-image">
+                <div class="course-content">
+                    <h2 class="course-title">Social Media, Digital Marketing ChatGPT + Content Marketing</h2>
+                    <div class="course-price">
+                        <span class="original-price">₹699</span>
+                        <span class="discounted-price">₹499</span>
+                    </div>
+                    <button class="buy-button" @click="initiatePurchase({
+                        title: 'Social Media, Digital Marketing ChatGPT + Content Marketing',
+                        image: 'Purple And White Modern Digital Marketing Agency Instagram Post.png',
+                        originalPrice: '699',
+                        discountedPrice: '499'
+                    })">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="python.webp" alt="Python Bootcamp Course" class="course-image">
+                <div class="course-content">
+                    <h2 class="course-title">Complete 2025 Python Bootcamp: Learn Python from Scratch</h2>
+                    <div class="course-price">
+                        <span class="original-price">₹999</span>
+                        <span class="discounted-price">₹599</span>
+                    </div>
+                    <button class="buy-button" @click="initiatePurchase({
+                        title: 'Complete 2025 Python Bootcamp: Learn Python from Scratch',
+                        image: 'python.webp',
+                        originalPrice: '999',
+                        discountedPrice: '599'
+                    })">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="Purple and White Professional Minimalist Digital Marketing Webinar Instagram Post.png" alt="Shopify Dropshipping Course" class="course-image">
+                <div class="course-content">
+                    <h2 class="course-title">Ultimate Shopify Dropshipping Masterclass 2025</h2>
+                    <div class="course-price">
+                        <span class="original-price">₹1299</span>
+                        <span class="discounted-price">₹799</span>
+                    </div>
+                    <button class="buy-button" @click="initiatePurchase({
+                        title: 'Ultimate Shopify Dropshipping Masterclass 2025',
+                        image: 'Purple and White Professional Minimalist Digital Marketing Webinar Instagram Post.png',
+                        originalPrice: '1299',
+                        discountedPrice: '799'
+                    })">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="Black and Purple Modern Artificial Intelligence Instagram Post.png" alt="ChatGPT Course" class="course-image">
+                <div class="course-content">
+                    <h2 class="course-title">ChatGPT: The Complete Course & How To Make Money</h2>
+                    <div class="course-price">
+                        <span class="original-price">₹899</span>
+                        <span class="discounted-price">₹599</span>
+                    </div>
+                    <button class="buy-button" @click="initiatePurchase({
+                        title: 'ChatGPT: The Complete Course & How To Make Money',
+                        image: 'Black and Purple Modern Artificial Intelligence Instagram Post.png',
+                        originalPrice: '899',
+                        discountedPrice: '599'
+                    })">Buy Now</button>
+                </div>
+            </div>
+        </section>
+        <section id="ebooks-page" class="ebooks-page" v-if="showEbooksPage">
+        </section>
+        <div class="login-modal" :class="{ active: showLoginModal }">
+            <div class="login-container">
+                <button class="close-login" @click="toggleLoginModal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="login-header">
+                    <img src="Abstract_Growth_Property_Investment_Free_Logo__1_-removebg-preview.png" alt="BUZZFlix Logo">
+                    <h2><span class="buzz">BUZZ</span><span class="flix">Flix</span></h2>
+                </div>
+                <div class="login-options">
+                    <button class="google-login" @click="loginWithGoogle">
+                        <i class="fab fa-google"></i>
+                        Continue with Google
+                    </button>
+                    <div class="divider">or</div>
+                    <form class="login-form" @submit.prevent="handleLogin">
+                        <div class="form-group">
+                            <i class="fas fa-envelope"></i>
+                            <input 
+                                type="email" 
+                                v-model="loginForm.email" 
+                                placeholder="Email address"
+                                :class="{ 'error': loginError }"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-lock"></i>
+                            <input 
+                                type="password" 
+                                v-model="loginForm.password" 
+                                placeholder="Password"
+                                :class="{ 'error': loginError }"
+                            >
+                        </div>
+                        <button type="submit" class="login-button">Log In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="legal-modal" :class="{ active: activeLegalModal !== null }" v-if="activeLegalModal">
+            <div class="legal-container">
+                <button class="close-legal" @click="closeLegalModal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="legal-header">
+                    <i :class="legalContent[activeLegalModal].icon"></i>
+                    <h2>{{ legalContent[activeLegalModal].title }}</h2>
+                </div>
+                <div class="legal-content" v-html="legalContent[activeLegalModal].content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+    <script type="module">
+        import { NotificationManager } from './notifications.js';
+        const notificationManager = new NotificationManager();
+        notificationManager.initialize();
+    </script>
+    <script type="module" src="plans.js"></script>
+    <script type="module" src="course-purchase.js"></script>
+</body>
+</html>

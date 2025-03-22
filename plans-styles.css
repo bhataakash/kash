@@ -1,0 +1,391 @@
+/* Add new styles */
+.offer-banner {
+  background: linear-gradient(135deg, #2c3e50, #27ae60);
+  color: white;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  animation: shimmer 2s infinite;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ramadan-offer {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.eid-offer {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+}
+
+.offer-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.offer-description {
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+
+.offer-timer {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.timer-unit {
+  background: rgba(255,255,255,0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.timer-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Monaco', monospace;
+}
+
+.timer-label {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.offer-discount {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0.8rem 0;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.eid-decoration {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.eid-decoration:nth-child(1) { top: 10%; left: 5%; }
+.eid-decoration:nth-child(2) { top: 30%; right: 5%; }
+.eid-decoration:nth-child(3) { bottom: 20%; left: 15%; }
+.eid-decoration:nth-child(4) { bottom: 10%; right: 10%; }
+
+@media (max-width: 768px) {
+  .offer-banner {
+    margin: 0 1rem 1rem;
+    padding: 0.6rem;
+  }
+
+  .offer-title {
+    font-size: 1.2rem;
+  }
+
+  .offer-description {
+    font-size: 0.9rem;
+  }
+
+  .timer-unit {
+    min-width: 50px;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .timer-value {
+    font-size: 1rem;
+  }
+
+  .timer-label {
+    font-size: 0.65rem;
+  }
+
+  .offer-discount {
+    font-size: 1.8rem;
+  }
+
+  .eid-decoration {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .offer-banner {
+    margin: 0 0.5rem 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .offer-timer {
+    gap: 0.4rem;
+  }
+
+  .timer-unit {
+    min-width: 45px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .timer-value {
+    font-size: 0.9rem;
+  }
+
+  .timer-label {
+    font-size: 0.6rem;
+  }
+
+  .offer-discount {
+    font-size: 1.6rem;
+    margin: 0.6rem 0;
+  }
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.plan-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-icon {
+  margin: 0 auto 1rem;
+  width: 80px;
+  height: 80px;
+}
+
+.plan-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 1rem;
+}
+
+.plan-header-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.plan-tier {
+  padding: 1rem;
+  text-align: center;
+}
+
+.plan-tier h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.plan-card p {
+  text-align: center;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.view-plan-btn {
+  margin: 1rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.view-plan-btn:hover {
+  transform: translateY(-2px);
+}
+
+.plan-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1200;
+}
+
+.plan-details-container {
+  background: white;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 2rem;
+}
+
+.plan-header {
+  text-align: center;
+}
+
+.plan-name h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.plan-content {
+  padding: 1rem 0;
+}
+
+.plan-courses {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feature-item i {
+  color: #4CAF50;
+}
+
+.purchase-plan-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.purchase-plan-btn:hover {
+  transform: translateY(-2px);
+}
+
+.close-plan-details {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-plan-details:hover {
+  transform: rotate(90deg);
+}
+
+.plans-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.plans-title-section {
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.plans-title-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.plans-title-section p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .plans-title-section h2 {
+    font-size: 2rem;
+  }
+  
+  .plans-title-section p {
+    font-size: 1rem;
+  }
+  
+  .plans-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

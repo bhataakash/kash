@@ -1,0 +1,30 @@
+.nav-links {
+    gap: 1.5rem; 
+}
+
+.nav-links a {
+    font-weight: 400; 
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem; 
+}
+
+.nav-links i {
+    font-size: 1rem; 
+}
+
+/* Sleek hover effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
